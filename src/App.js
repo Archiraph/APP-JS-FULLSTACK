@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import NewPost from "./components/NewPost";
+import Thread from "./components/Thread";
+import { useDispatch } from "react-redux";
+import { getUser } from "./feature/user.slice";
 
-function App() {
+const App = () => {
+  const [userId, setUserId] = useState("");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser(userId));
+  }, [userId]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="login">
+        <h3>Bonjour</h3>
+        <input
+          type="text"
+          placeholder="Pseudo"
+          onChange={(e) => setUserId(e.target.value)}
+        />
+      </div>
+      <NewPost />
+      <Thread />
     </div>
   );
-}
+};
 
 export default App;

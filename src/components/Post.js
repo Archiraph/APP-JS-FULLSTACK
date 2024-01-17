@@ -22,9 +22,13 @@ const Post = ({ post }) => {
 
   const handleEdit = () => {
     if (newMessage) {
-      axios.put("http://localhost:5000/post/" + post._id, {
-        message: newMessage,
-      });
+      axios.put(
+        "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/" +
+          post._id,
+        {
+          message: newMessage,
+        }
+      );
       dispatch(editPost([newMessage, post._id]));
     }
   };

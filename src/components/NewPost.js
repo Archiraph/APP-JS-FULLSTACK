@@ -17,7 +17,10 @@ const NewPost = () => {
       _id: Date.now(),
     };
 
-    axios.post("http://localhost:5000/post/", data);
+    axios.post(
+      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/",
+      data
+    );
     dispatch(createPost(data));
     dispatch(getPosts());
     setMessage("");

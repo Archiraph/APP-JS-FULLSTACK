@@ -7,7 +7,10 @@ const DeletePost = ({ postId }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    axios.delete("http://localhost:5000/post/" + postId);
+    axios.delete(
+      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/" +
+        postId
+    );
     dispatch(deletePost(postId));
   };
 

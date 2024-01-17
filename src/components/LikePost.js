@@ -19,15 +19,23 @@ const LikePost = ({ post }) => {
   }, [userId]);
 
   const likePost = () => {
-    axios.patch("http://localhost:5000/post/like-post/" + post._id, { userId });
+    axios.patch(
+      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/like-post/" +
+        post._id,
+      { userId }
+    );
     dispatch(like([userId, post._id]));
     setUserLiked(true);
   };
 
   const dislikePost = () => {
-    axios.patch("http://localhost:5000/post/dislike-post/" + post._id, {
-      userId,
-    });
+    axios.patch(
+      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/dislike-post/" +
+        post._id,
+      {
+        userId,
+      }
+    );
     dispatch(dislike([userId, post._id]));
     setUserLiked(false);
   };

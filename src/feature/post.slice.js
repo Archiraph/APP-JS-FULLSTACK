@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getPosts = createAsyncThunk("getPosts", async (_, thunkAPI) => {
   axios
-    .get("http://localhost:5000/post/")
+    .get("https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/")
     .then((res) => thunkAPI.dispatch(getPostsSuccess(res.data)));
 });
 

@@ -12,8 +12,7 @@ const app = express();
 // Autorisation CORS
 app.use(
   cors({
-    origin:
-      "https://app-js-fullstack-cvqly10dt-archiraphs-projects.vercel.app/",
+    origin: "https://app-js-fullstack.vercel.app/",
     credentials: true,
     optionsSuccessStatus: 200,
   })

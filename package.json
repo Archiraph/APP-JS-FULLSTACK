@@ -1,7 +1,12 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "app-js-fullstack",
+  "version": "1.0.0",
   "private": true,
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -12,13 +17,23 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.4",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm run start:frontend",
+    "build": "npm run build:frontend",
+    "test": "npm run test:frontend",
+    "eject": "npm run eject:frontend",
+    "start:frontend": "cd frontend && react-scripts start",
+    "build:frontend": "cd frontend && react-scripts build",
+    "test:frontend": "cd frontend && react-scripts test",
+    "eject:frontend": "cd frontend && react-scripts eject",
+    "server": "nodemon ./backend/server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,25 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
-}
-{
-  "name": "app-js-fullstack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./backend/server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "mongoose": "^8.0.3",
-    "nodemon": "^3.0.2"
   }
 }

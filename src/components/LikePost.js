@@ -20,7 +20,7 @@ const LikePost = ({ post }) => {
 
   const likePost = () => {
     axios.patch(
-      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/like-post/" +
+      "https://full-stack-archiraphs-projects.vercel.app/post/like-post/" +
         post._id,
       { userId }
     );
@@ -30,7 +30,7 @@ const LikePost = ({ post }) => {
 
   const dislikePost = () => {
     axios.patch(
-      "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/dislike-post/" +
+      "https://full-stack-archiraphs-projects.vercel.app/post/dislike-post/" +
         post._id,
       {
         userId,

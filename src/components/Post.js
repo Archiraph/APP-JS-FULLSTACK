@@ -23,8 +23,7 @@ const Post = ({ post }) => {
   const handleEdit = () => {
     if (newMessage) {
       axios.put(
-        "https://full-stack-e0nkxreq6-archiraphs-projects.vercel.app/post/" +
-          post._id,
+        "https://full-stack-archiraphs-projects.vercel.app/post/" + post._id,
         {
           message: newMessage,
         }

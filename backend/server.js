@@ -25,4 +25,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/post", require("./routes/post.route"));
 
 // Lancer le serveur
-app.listen(port, () => console.log("Le serveur a démarré au port " + port));
+app.listen(port, () =>
+  console.log("Le serveur a démarré au port suivant :" + port)
+);

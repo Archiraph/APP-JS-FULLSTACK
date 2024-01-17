@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../feature/user.slice";
 import postReducer from "../feature/post.slice";
 import thunk from "redux-thunk";
@@ -8,7 +8,7 @@ const store = configureStore({
     user: userReducer,
     posts: postReducer,
   },
-  middleware: [...getDefaultMiddleware(), thunk],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: true }),
 });
 
 export default store;

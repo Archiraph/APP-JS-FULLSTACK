@@ -29,10 +29,10 @@
     "build": "npm run build:frontend",
     "test": "npm run test:frontend",
     "eject": "npm run eject:frontend",
-    "start:frontend": "cd frontend && react-scripts start",
-    "build:frontend": "cd frontend && react-scripts build",
-    "test:frontend": "cd frontend && react-scripts test",
-    "eject:frontend": "cd frontend && react-scripts eject",
+    "start:frontend": "react-scripts start",
+    "build:frontend": "react-scripts build",
+    "test:frontend": "react-scripts test",
+    "eject:frontend": "react-scripts eject",
     "server": "nodemon ./backend/server.js"
   },
   "eslintConfig": {

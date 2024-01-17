@@ -2,9 +2,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getPosts = createAsyncThunk("getPosts", async (_, thunkAPI) => {
-  axios
-    .get("https://app-js-fullstack.vercel.app/post/")
-    .then((res) => thunkAPI.dispatch(getPostsSuccess(res.data)));
+  try {
+    const response = await axios.get(
+      "https://app-js-fullstack.vercel.app/post/"
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    throw error;
+  }
 });
 
 export const postSlice = createSlice({
@@ -58,6 +64,11 @@ export const postSlice = createSlice({
         }
       });
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getPosts.fulfilled, (state, action) => {
+      state.postsData = action.payload;
+    });
   },
 });
 

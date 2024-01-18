@@ -1,20 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getPosts = createAsyncThunk(
-  "posts/getPosts",
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get(
-        "https://app-js-fullstack.vercel.app/post/"
-      );
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching posts:", error);
-      throw error;
-    }
+export const getPosts = createAsyncThunk("getPosts", async (_, thunkAPI) => {
+  try {
+    const response = await axios.get(
+      "https://app-js-fullstack.vercel.app/api/post/"
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    throw error;
   }
-);
+});
 
 export const postSlice = createSlice({
   name: "posts",

@@ -20,7 +20,7 @@ const LikePost = ({ post }) => {
 
   const likePost = () => {
     axios.patch(
-      "https://app-js-fullstack.vercel.app/post/like-post/" + post._id,
+      "https://app-js-fullstack.vercel.app/api/post/like-post/" + post._id,
       { userId }
     );
     dispatch(like([userId, post._id]));
@@ -29,7 +29,7 @@ const LikePost = ({ post }) => {
 
   const dislikePost = () => {
     axios.patch(
-      "https://app-js-fullstack.vercel.app/post/dislike-post/" + post._id,
+      "https://app-js-fullstack.vercel.app/api/post/dislike-post/" + post._id,
       {
         userId,
       }

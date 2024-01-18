@@ -22,7 +22,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/post", require("./routes/post.route"));
+app.use("/api/post", require("./routes/post.route"));
 
 // Lancer le serveur
 app.listen(port, () =>

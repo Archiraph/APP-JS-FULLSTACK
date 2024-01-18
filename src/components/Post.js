@@ -22,7 +22,7 @@ const Post = ({ post }) => {
 
   const handleEdit = () => {
     if (newMessage) {
-      axios.put("https://app-js-fullstack.vercel.app//post/" + post._id, {
+      axios.put("https://app-js-fullstack.vercel.app/post/" + post._id, {
         message: newMessage,
       });
       dispatch(editPost([newMessage, post._id]));

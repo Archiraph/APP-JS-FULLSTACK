@@ -67,7 +67,7 @@ export const postSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getPosts.fulfilled, (state, action) => {
-      state.postsData = action.payload;
+      state.postsData = Array.isArray(action.payload) ? action.payload : [];
     });
   },
 });

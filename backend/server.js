@@ -19,8 +19,8 @@ app.use(
 );
 
 // Middleware qui permet de traiter les données du req (request)
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use("/api", express.json());
+app.use("/api", express.urlencoded({ extended: false }));
 
 app.use("/api/post", require("./routes/post.route"));
 

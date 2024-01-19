@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getUser(userId));
-  }, [userId]);
+  }, [userId, dispatch]);
 
   return (
     <div className="app-container">

@@ -7,7 +7,7 @@ const DeletePost = ({ postId }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    axios.delete("https://full-stack-app-zeta.vercel.app/post/" + postId);
+    axios.delete("https://app-js-fullstack.vercel.app/api/post/" + postId);
     dispatch(deletePost(postId));
   };
 

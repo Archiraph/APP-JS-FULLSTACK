@@ -12,17 +12,17 @@ const app = express();
 // Autorisation CORS
 app.use(
   cors({
-    origin: "https://full-stack-app-zeta.vercel.app/",
+    origin: "https://raphaelmortiers.com/",
     credentials: true,
     optionsSuccessStatus: 200,
   })
 );
 
 // Middleware qui permet de traiter les données du req (request)
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use("/api", express.json());
+app.use("/api", express.urlencoded({ extended: false }));
 
-app.use("/post", require("./routes/post.route"));
+app.use("/api/post", require("./routes/post.route"));
 
 // Lancer le serveur
 app.listen(port, () =>

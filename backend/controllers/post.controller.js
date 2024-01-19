@@ -1,8 +1,15 @@
 const PostModel = require("../models/post.model");
 
 module.exports.getPosts = async (req, res) => {
-  const posts = await PostModel.find();
-  res.status(200).json(posts);
+  try {
+    console.log("Calling getPosts controller");
+    const posts = await PostModel.find();
+    console.log("Posts:", posts);
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 };
 
 module.exports.setPosts = async (req, res) => {

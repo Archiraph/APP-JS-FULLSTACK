@@ -12,7 +12,7 @@ const app = express();
 // Autorisation CORS
 app.use(
   cors({
-    origin: "https://app-js-fullstack.vercel.app",
+    origin: "https://raphaelmortiers.com/",
     credentials: true,
     optionsSuccessStatus: 200,
   })

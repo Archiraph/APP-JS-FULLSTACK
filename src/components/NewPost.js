@@ -17,7 +17,7 @@ const NewPost = () => {
       _id: Date.now(),
     };
 
-    axios.post("https://app-js-fullstack.vercel.app/api/post/", data);
+    axios.post("https://raphaelmortiers.com/projets/projet1/post/", data);
     dispatch(createPost(data));
     dispatch(getPosts());
     setMessage("");

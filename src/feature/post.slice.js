@@ -4,7 +4,7 @@ import axios from "axios";
 export const getPosts = createAsyncThunk("getPosts", async (_, thunkAPI) => {
   try {
     const response = await axios.get(
-      "https://app-js-fullstack.vercel.app/api/post/"
+      "https://raphaelmortiers.com/projets/projet1/post/"
     );
     return response.data;
   } catch (error) {
